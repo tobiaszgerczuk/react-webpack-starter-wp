@@ -1,8 +1,12 @@
 <?php get_header(); ?>
 
 <main>
-	<h1>Hello, WordPress!</h1>
-    <div id="root"></div>
+	<?php while ( have_posts() ) : the_post(); ?>
+        <h1><?php the_title(); ?></h1>
+        <div class="container">
+			<?php the_content(); ?>
+        </div>
+	<?php endwhile; ?>
 </main>
 
 <?php get_footer(); ?>
